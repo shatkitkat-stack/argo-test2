@@ -1,0 +1,11 @@
+# overlays/production/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Указываем, что эта конфигурация основана на нашей базе
+bases:
+  - ../../base
+
+# Патчи, которые нужно применить
+patchesStrategicMerge:
+  - patch-replica-count.yaml

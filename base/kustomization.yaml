@@ -1,0 +1,14 @@
+# base/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Перечисляем все ресурсы, которые являются частью нашей базы
+resources:
+  - deployment.yaml
+  - service.yaml
+
+# Общие метки, которые будут добавлены ко всем ресурсам
+commonLabels:
+  app.kubernetes.io/name: nginx-app
+  app.kubernetes.io/component: webserver
+  app.kubernetes.io/part-of: argo-test2

@@ -1,0 +1,13 @@
+# overlays/production/patch-replica-count.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: argo-test2
+spec:
+  replicas: 3 # Увеличиваем количество реплик до 3
+  template:
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.25 # Обновляем версию образа
